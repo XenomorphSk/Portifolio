@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <div class="logo"><a href="index.html"><img src="images/fsociety.png"></a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="portifolio.html">Portfolio</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header>
+    <h1 id="title" class="transform-animation">サイバーネティックな翻訳</h1>
+  </header>
+  <section class="about">
+    <div class="container">
+      <div class="foto">
+        <img id="foto" src="images/eu.jpeg" alt="Photo">
+      </div>
+      <div class="bio">
+        <h2>Gabriel Skura Ribeiro</h2>
+        <p> Software Engineering Student - started in 2023 - UniCesumar;</p>
+         <p>   Graduated in Computer Technician at TECPUC - PR (2020 - 2022);</p>
+          <p>  Experience in programming languages including C++, Python, Perl, and PHP;</p>
+           <p> Experience with SQL language and non-relational databases;</p>
+          <p>  Experience in network infrastructure, game jams, configuration of Apache servers in Onion networks, Debian and Windows operating systems;</p>
+            <p> Experience with Pentesting and Bug Bounty;</p>
+                <p> Musician, guitarist, and guitarist;</p>
+                    <p> Evangelical Christian aiming for family and good morals.</p>
+        <p>I am a cybersecurity professional specializing in pentesting and hacker investigation services.</p>
+      </div>
+    </div>
+  </section>
+
+  <script >
+    
+const title = document.getElementById('title');
+const englishTitle = "About Me";
+const duration = 3000;
+const japaneseDuration = 5000;
+
+
+let startTime;
+
+function transformTitle(timestamp) {
+  if (!startTime) startTime = timestamp;
+  const progress = timestamp - startTime;
+
+  if (progress < japaneseDuration) { 
+    
+  } else if (progress < japaneseDuration + transitionDuration) { 
+    const ratio = (progress - japaneseDuration) / transitionDuration;
+    const japaneseLength = Math.floor((1 - ratio) * title.textContent.length);
+    const englishLength = Math.floor(ratio * englishTitle.length);
+    title.textContent = title.textContent.slice(0, japaneseLength) + englishTitle.slice(0, englishLength);
+  } else { 
+    title.textContent = englishTitle;
+  }
+
+  if (progress < japaneseDuration + transitionDuration) { 
+    requestAnimationFrame(transformTitle);
+  }
+}
+
+window.onload = function() {
+  requestAnimationFrame(transformTitle);
+};
+
+  </script> 
+</body>
+</html>
