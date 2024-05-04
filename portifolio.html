@@ -3,27 +3,62 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About</title>
+  <title>Portfolio</title>
   <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/port.css">
+  <link rel="stylesheet" href="css/cmd.css">
 </head>
 <body>
   <nav class="navbar">
     <div class="container">
-      <div class="logo"><a href="index.html"><img src="images/fsociety.png"></a>
-      </div>
+      <div class="logo"><a href="index.html"><img src="images/fsociety.png"></a></div>
       <ul class="nav-links">
         <li><a href="about.html">About</a></li>
         <li><a href="portifolio.html">Portfolio</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
   </nav>
 
+  <div class="retro-overlay"></div> 
+
+  <div class="terminal-container">
+    <div class="terminal-header">Welcome Kyr1o5</div>
+    <div class="terminal-body">
+      <p>Type 'help' for available commands</p>
+    </div>
+    <div class="terminal-menu">
+      <div class="menu-item" onclick="expandItem('career')">Career</div>
+      <div class="expanded-item" id="career-expanded">
+          <p>I work at Celepar as an intern, where I have conducted pentests for the company and discovered privilege escalation vulnerabilities. Additionally, I conducted a pentest at PIB (First Baptist Church), where I identified user data leaks and a cryptojacker. Currently, I am providing training in ethical hacking and developing tools for pentesting.</p>
+      </div>
+      <div class="menu-item" onclick="expandItem('projects')">Projects</div>
+      <div class="expanded-item" id="projects-expanded">
+        <p>I am currently developing four hacking tools:</p>
+        <a href="https://github.com/XenomorphSk/Blitzkrieg"><p><strong>Blitzkrieg:</strong> A Perl-based DDoS attack tool, known for its extreme strength and practicality. Blitzkrieg is designed to launch powerful distributed denial-of-service attacks, capable of overwhelming target servers and networks.</p></a>
+        <a href="https://github.com/XenomorphSk/Invincible"><p><strong>Invincible:</strong> A versatile tool for breaking hashes and cryptographic algorithms. Invincible utilizes advanced algorithms and techniques to decrypt encrypted data, making it a valuable asset for penetration testers and security professionals.</p></a>
+        <a href="https://github.com/XenomorphSk/Omniman"><p><strong>Omniman:</strong> A comprehensive brute-force attack tool, specializing in HTTP and HTTPS attacks, with additional support for FTP and SSH. Omniman is designed to test the strength of passwords and credentials, helping identify weak points in target systems.</p></a>
+        <a href="https://github.com/XenomorphSk/VaporVigil"><p><strong>Vapor Vigio:</strong> A multifunctional toolset encompassing various hacking techniques, including OSINT (Open-Source Intelligence) and pentesting (Penetration Testing). Vapor Vigio serves as a Swiss Army knife for cybersecurity professionals, offering a wide range of capabilities in a single package. Inspired by the game Hotline Miami, it embodies the fast-paced and versatile nature of hacking.</p></a>
+      </div>
+    </div>
+  </div>
+
   <script>
-    
+    function expandItem(item) {
+      const careerExpanded = document.getElementById('career-expanded');
+      const projectsExpanded = document.getElementById('projects-expanded');
+      
+      
+      careerExpanded.style.display = 'none';
+      projectsExpanded.style.display = 'none';
+
+      
+      if (item === 'career') {
+        careerExpanded.style.display = 'block';
+      } else if (item === 'projects') {
+        projectsExpanded.style.display = 'block';
+      }
+    }
   </script>
-  
 
 </body>
 </html>
