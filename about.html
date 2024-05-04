@@ -14,13 +14,13 @@
       <ul class="nav-links">
         <li><a href="about.html">About</a></li>
         <li><a href="portifolio.html">Portfolio</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
   </nav>
 
   <header>
-    <h1 id="title" class="transform-animation">サイバーネティックな翻訳</h1>
+    <h1 id="title" class="transform-animation">私について</h1>
   </header>
   <section class="about">
     <div class="container">
@@ -46,9 +46,8 @@
     
 const title = document.getElementById('title');
 const englishTitle = "About Me";
-const duration = 3000;
-const japaneseDuration = 5000;
-
+const japaneseDuration = 5000; 
+const transitionDuration = 3000; 
 
 let startTime;
 
@@ -57,12 +56,11 @@ function transformTitle(timestamp) {
   const progress = timestamp - startTime;
 
   if (progress < japaneseDuration) { 
-    
+    title.textContent = "私について";
   } else if (progress < japaneseDuration + transitionDuration) { 
     const ratio = (progress - japaneseDuration) / transitionDuration;
-    const japaneseLength = Math.floor((1 - ratio) * title.textContent.length);
     const englishLength = Math.floor(ratio * englishTitle.length);
-    title.textContent = title.textContent.slice(0, japaneseLength) + englishTitle.slice(0, englishLength);
+    title.textContent = englishTitle.slice(0, englishLength);
   } else { 
     title.textContent = englishTitle;
   }
@@ -75,6 +73,7 @@ function transformTitle(timestamp) {
 window.onload = function() {
   requestAnimationFrame(transformTitle);
 };
+
 
   </script> 
 </body>
