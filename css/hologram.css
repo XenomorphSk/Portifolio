@@ -1,0 +1,89 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    font-family: 'Source Code Pro', monospace;
+    color: #00ff00;
+}
+
+.navbar {
+    background-color: #222;
+    padding: 20px 0;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo a {
+    font-size: 24px;
+    text-decoration: none;
+    color: #00ff00;
+}
+
+.nav-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #00ff00;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #ff00ff;
+}
+
+.repo-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.hologram-text {
+    font-size: 36px;
+    color: #00ff00;
+    text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 40px #00ff00, 0 0 80px #00ff00;
+    animation: flicker 1.5s infinite alternate;
+}
+
+.hologram-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.hologram-list li {
+    margin: 10px 0;
+}
+
+.hologram-link {
+    color: #00ff00;
+    text-decoration: none;
+    font-size: 24px;
+    text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 40px #00ff00, 0 0 80px #00ff00;
+    transition: color 0.3s;
+}
+
+.hologram-link:hover {
+    color: #ff00ff;
+}
+
+@keyframes flicker {
+    0% { opacity: 1; }
+    50% { opacity: 0.8; }
+    100% { opacity: 1; }
+}
