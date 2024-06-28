@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Repositories</title>
+    <link rel="stylesheet" href="css/hologram.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo"><a href="index.html"><img src="images/fsociety.png" alt="Logo"></a></div>
+            <ul class="nav-links">
+                <li><a href="about.html">About</a></li>
+                <li><a href="portifolio.html">Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="repos.html">Repositories</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="repo-container">
+        <h1 class="hologram-text">Repositories of GSR</h1>
+        <ul id="repo-list" class="hologram-list"></ul>
+    </div>
+
+    <script>
+        fetch('https://api.github.com/users/XenomorphSk/repos')
+            .then(response => response.json())
+            .then(data => {
+                const repoList = document.getElementById('repo-list');
+                data.forEach(repo => {
+                    const listItem = document.createElement('li');
+                    listItem.innerHTML = `<a href="${repo.html_url}" class="hologram-link">${repo.name}</a>`;
+                    repoList.appendChild(listItem);
+                });
+            })
+            .catch(error => console.error('Error fetching repos:', error));
+    </script>
+</body>
+</html>
